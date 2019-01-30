@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\User;
 use App\Post;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
@@ -14,13 +15,10 @@ class PostController extends Controller
     	return response()->json(Post::all());
     }
 
-    //Submit Posts to Timeline
-    public function timeline()
+    public function get(Request $request)
     {
-        $list_posts = response()->json(Post::all());
-        return view('welcome', [
-            'posts' => $list_posts
-        ]);
+        $posts = Post::with('user')->get();
+        return response()->json($posts);
     }
 
     public function show($id)

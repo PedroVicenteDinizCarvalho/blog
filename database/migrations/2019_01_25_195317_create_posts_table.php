@@ -20,8 +20,8 @@ class CreatePostsTable extends Migration
             $table->text('body');
             $table->string('image');
             $table->boolean('published');
-            $table->integer('author_id')->unsigned();
-            $table->foreign('author_id')->references('id')->on('users');
+            $table->integer('user_id')->unsigned()->index()->nullable();
+            $table->foreign('user_id')->references('id')->on('users');
             $table->timestamps();
         });
     }

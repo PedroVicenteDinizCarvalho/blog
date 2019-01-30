@@ -31,16 +31,14 @@ Vue.component('posts-user-component', require('./components/posts/PostsUserCompo
  * the page. Then, you may begin adding components to this application
  * or customize the JavaScript scaffolding to fit your unique needs.
  */
-//Vue Router
-import VueRouter from 'vue-router'
-import routes from './routes'
 
- Vue.use(VueRouter)
- const router = new VueRouter({
- 	routes
- })
+//Vue Axios and VueAxios
+import axios from 'axios'
+import VueAxios from 'vue-axios' 
+
+//Vue use
+Vue.use(VueAxios, axios)
 
 const app = new Vue({
-    el: '#app',
-    router
+    el: '#app'
 });

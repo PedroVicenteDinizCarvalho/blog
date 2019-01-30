@@ -32,7 +32,7 @@
             @endif
             <div class="content">
                 <div id="app">
-                    <router-view> </router-view>
+                    <posts-all-component> </posts-all-component>
                 </div>
             </div>
         </div>

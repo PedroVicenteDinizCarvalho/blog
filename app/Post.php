@@ -7,11 +7,11 @@ use Illuminate\Database\Eloquent\Model;
 class Post extends Model
 {
     protected $fillable = [
-    	'title', 'slug', 'body', 'image', 'published', 'author_id',
+    	'title', 'slug', 'body', 'image', 'published', 'user_id',
     ];
 
-    public function authors()
+    public function user()
     {
-    	return $this->belongsToMany(User::class);
+    	return $this->belongsTo(User::class, 'user_id', 'id');
     }
 }
